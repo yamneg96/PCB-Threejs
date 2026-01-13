@@ -1,15 +1,7 @@
-export function clearUniforms(material) {
-  material.uniforms.uHovered.value = 0;
-  material.uniforms.uSelected.value = 0;
-}
+export const setHover = (material, state) => {
+  material.uniforms.uHovered.value = state ? 1.0 : 0.0;
+};
 
-export function setHover(material) {
-  material.uniforms.uHovered.value = 1;
-}
-
-export function setSelected(material) {
-  material.uniforms.uSelected.value = 1;
-}
-// export function toggleSelected(material) {
-//   material.uniforms.uSelected.value = material.uniforms.uSelected.value ? 0 : 1;
-// }
+export const setSelected = (material, state) => {
+  material.uniforms.uSelected.value = state ? 1.0 : 0.0;
+};
