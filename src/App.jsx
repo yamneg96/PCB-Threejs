@@ -47,6 +47,9 @@ export default function App() {
     edges.position.y += 0.03;
     pads.add(edges);
 
+    // engine.scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+    // engine.scene.add(new THREE.DirectionalLight(0xffffff, 0.6));
+
     let transformControls = null;
 
     const onMouseMove = e => {
