@@ -18,6 +18,14 @@ export class Engine {
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.enableDamping = true;
 
+    // Ensure lighting is added to the scene
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white light [cite: 9]
+    this.scene.add(ambientLight);
+
+    const sunLight = new THREE.DirectionalLight(0xffffff, 1.0);
+    sunLight.position.set(10, 20, 10);
+    this.scene.add(sunLight);
+
     this.animate();
   }
 
