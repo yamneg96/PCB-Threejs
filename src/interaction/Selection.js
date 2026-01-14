@@ -1,7 +1,18 @@
-export const setHover = (material, state) => {
-  material.uniforms.uHovered.value = state ? 1.0 : 0.0;
-};
+let hoveredInstance = null;
 
-export const setSelected = (material, state) => {
-  material.uniforms.uSelected.value = state ? 1.0 : 0.0;
-};
+export function clearHover(material) {
+  material.uniforms.uHovered.value = -1;
+}
+
+export function setHover(material, instanceId) {
+  hoveredInstance = instanceId;
+  material.uniforms.uHovered.value = instanceId;
+}
+
+export function setSelected(material, instanceId) {
+  material.uniforms.uSelected.value = instanceId;
+}
+
+export function clearSelected(material) {
+  material.uniforms.uSelected.value = -1;
+}
